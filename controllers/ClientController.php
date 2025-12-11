@@ -57,11 +57,20 @@ class ClientController{
             $ville = new Ville;
             $pays = new Pays;
             $user = new User; 
-            $villeArray = ['nom'=>$data['ville_id']];
-            $paysArray = ['nom'=>$data['pays_id']];
-            
-            $data['ville_id'] = $ville->insert($villeArray);
-            $data['pays_id'] = $pays->insert($paysArray);          
+            $paysExiste = $pays->selectValueId('id', 'nom', $data['pays_id']);           
+            if($paysExiste){
+                $data['pays_id'] = $paysExiste;
+            }else{
+                $paysArray = ['nom' => $data['pays_id']];            
+                $data['pays_id'] = $pays->insert($paysArray);
+            }
+            $villeExiste = $ville->selectValueId('id', 'nom', $data['ville_id']);           
+            if($villeExiste){
+                $data['ville_id'] = $villeExiste;
+            }else{
+                $villeArray = ['nom' => $data['ville_id']];            
+                $data['ville_id'] = $ville->insert($villeArray);
+            }        
             $data['mot_de_passe'] = $user->hashPassword($data['mot_de_passe']);          
             $insert = $user->insert($data);
             if($insert){
@@ -78,10 +87,7 @@ class ClientController{
          }
 
     }
-    // public function delete(){
-    //     session_destroy();
-    //     return View::redirect('login');
-    // }
+  
 }
 
 ?>

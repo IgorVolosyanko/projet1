@@ -23,7 +23,7 @@ class TimbreController{
         $validator = new Validator;
        
         $validator->field('nom', $data['nom'])->required()->min(2)->max(50);         
-        $validator->field('tirage', $data['tirage'])->required()->min(1)->max(50);
+        $validator->field('tirage', $data['tirage'])->required()->int();
         $validator->field('dimension', $data['dimension'])->required()->int();
         $validator->field('couleur_id', $data['couleur_id'])->required()->min(3);
         $validator->field('pays_id', $data['pays_id'])->required()->min(3)->max(50);        

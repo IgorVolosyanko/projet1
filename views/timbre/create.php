@@ -17,7 +17,7 @@
                 <input type="text" name="nom" value="{{timbre.nom}}">
             </label>
             <label class="label-form">Tirage<br>
-                <input type="text" name="tirage" value="{{timbre.tirage}}">
+                <input type="number" name="tirage" value="{{timbre.tirage}}">
             </label>
             <label class="label-form">Dimension <br>
                 <input type="number" name="dimension" value="{{timbre.dimension}}">

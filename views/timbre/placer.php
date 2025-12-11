@@ -12,7 +12,7 @@
         {% endif %}
     
         <form class="input-form" method="post">            
-            <h2>Créer un enchère</h2>
+            <h2>Créer une enchère</h2>
             <label class="label-form">Prix plancher <br>
                 <input type="number" name="prix_plancher" value="{{timbre.prix_plancher}}">
             </label>

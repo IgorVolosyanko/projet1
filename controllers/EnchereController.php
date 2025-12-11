@@ -16,6 +16,7 @@ class EnchereController{
        
         $validator->field('prix_plancher', $data['prix_plancher'])->required()->double();         
         $validator->field('valeur_estimee', $data['valeur_estimee'])->required()->double();
+        
         if($validator->isSuccess()){
             $enchere = new Enchere;
             $enchere->initDates();
@@ -33,7 +34,7 @@ class EnchereController{
             }
         }else{
             $errors = $validator->getErrors();
-            return view::render('timbre/image', ['errors'=>$errors, 'timbre' =>$data]);        
+            return view::render('timbre/placer', ['errors'=>$errors, 'timbre' =>$data]);        
         }
     }
 }

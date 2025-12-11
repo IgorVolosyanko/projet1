@@ -1,0 +1,22 @@
+.categories > h2 {
+  margin-bottom: var(--espace-md);
+}
+
+.categories ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.categories ul > * > a {
+  text-decoration: none;
+  color: var(--couleur-texte);
+}
+
+.categories ul > * > a:hover {
+  text-decoration: underline;
+}
+
+.categories li {
+  padding: 2px;
+}

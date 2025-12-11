@@ -1,0 +1,28 @@
+:root {
+  --police-taille-ss: 0.6rem;
+  --police-taille-s: 0.7rem;
+  --police-taille-sm: 0.8rem;
+  --police-taille-mm: 0.9rem;
+  --police-taille-md: 1rem;
+
+  --espace-ssm: 5px;
+  --espace-sm: 10px;
+  --espace-md: 20px;
+  --espace-lg: 30px;
+  --espace-xl: 40px;
+  --espace-xxl: 50px;
+  --espace-xxxl: 60px;
+
+  --radius-s: 5px;
+  --radius-m: 10px;
+  --radius-lg: 20px;
+
+  --couleur-gris: lightgray;
+  --couleur-primaire: #f2f2f2;
+  --couleur-active: #fe893a;
+  --couleur-contour: #21486d;
+  --couleur-texte: #21486d;
+  --couleur-secondaire: #156cd0;
+  --couleur-menu: #0e4588;
+  --couleur-footer: #1e579e;
+}

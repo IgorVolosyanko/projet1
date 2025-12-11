@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--espace-xl);
+  margin-left: 150px;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .pagination {
+    margin-left: 0;
+  }
+}
+
+.pagination p {
+  padding: 0 10px;
+  align-content: center;
+}
+
+.pagination p:hover {
+  background-color: var(--couleur-active);
+  border-radius: var(--radius-lg);
+  border: none;
+}

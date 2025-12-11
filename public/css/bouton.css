@@ -1,0 +1,14 @@
+.bouton {
+  display: flex;
+  margin-top: auto;
+}
+
+.bouton .btn {
+  margin-left: auto;
+  margin-right: var(--espace-ssm);
+}
+
+.bouton > p {
+  margin-left: var(--espace-ssm);
+  margin-right: var(--espace-ssm);
+}

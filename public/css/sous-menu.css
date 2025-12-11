@@ -1,0 +1,13 @@
+.sous-menu li {
+  list-style: none;
+}
+
+.sous-menu a {
+  display: block;
+  padding: 5px 15px;
+  color: var(--couleur-texte);
+}
+
+.sous-menu a:hover {
+  background-color: var(--couleur-primaire);
+}

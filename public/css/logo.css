@@ -1,0 +1,18 @@
+.logo {
+  left: var(--espace-lg);
+  padding-top: var(--espace-sm);
+  max-width: 150px;
+  margin-left: var(--espace-md);
+  margin-right: auto;
+}
+
+@media (max-width: 860px) {
+  .logo {
+    margin-right: 0;
+  }
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+}

@@ -1,0 +1,20 @@
+.annonce {
+  display: flex;
+  gap: var(--espace-sm);
+  margin: var(--espace-md) var(--espace-xl);
+  border: 0.5px solid var(--couleur-gris);
+  border-radius: var(--radius-s);
+}
+
+.annonce > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.annonce > img {
+  border-radius: var(--radius-s);
+}
+
+.annonce .bloc-img {
+  align-self: center;
+}

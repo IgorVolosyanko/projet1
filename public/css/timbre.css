@@ -1,0 +1,53 @@
+/* .timbre-supelementaire > img {
+  max-width: 100px;
+  height: auto;
+} */
+
+.timbre-supelementaire > * > img {
+  max-width: 100px;
+  height: auto;
+}
+
+.timbres {
+  display: flex;
+  flex-direction: column;
+}
+
+.timbre {
+  margin: 5px 5px 0 5px;
+  border: 1px solid var(--couleur-gris);
+  border-radius: var(--radius-s);
+  background-color: var(--couleur-primaire);
+  display: flex;
+  justify-items: center;
+  align-content: center;
+}
+
+.timbre > img {
+  max-width: 240px;
+  height: 315px;
+  max-height: 100%;
+  border-radius: var(--radius-s);
+  object-fit: cover;
+}
+
+.timbre-grand img {
+  max-width: 480px;
+  transition: 0.3s ease;
+  cursor: zoom-in;
+}
+
+@media (max-width: 1200px) {
+  .timbres {
+    flex-direction: row;
+    gap: var(--espace-sm);
+  }
+}
+
+@media (max-width: 530px) {
+  .timbre-grand img {
+    max-width: 280px;
+    transition: 0.3s ease;
+    cursor: zoom-in;
+  }
+}

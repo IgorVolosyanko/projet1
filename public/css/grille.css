@@ -1,0 +1,30 @@
+.grille-grand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--espace-sm);
+  margin: var(--espace-xxl);
+}
+
+.grille-fiche {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.grille-fiche > label {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .grille-grand {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 370px) {
+  .grille-grand {
+    margin-left: var(--espace-sm);
+    margin-right: var(--espace-sm);
+  }
+}

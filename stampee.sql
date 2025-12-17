@@ -209,6 +209,12 @@ CREATE TABLE IF NOT EXISTS `stampee`.`mise` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE TABLE IF NOT EXISTS `stampee`.`favori` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `timbre_id` VARCHAR(45) NOT NULL,
+  `utilisateur_id` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
@@ -230,3 +236,4 @@ SELECT * FROM stampee.condition;
 SELECT * FROM couleur;
 SELECT * FROM enchere;
 SELECT * FROM mise;
+SELECT * FROM favori;

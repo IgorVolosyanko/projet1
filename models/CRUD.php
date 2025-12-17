@@ -34,32 +34,14 @@ abstract class CRUD extends \PDO {
         return $stmt->fetchAll();
     }
 
-    // final public function selectAllinAll($select, $value, $field = null){        
-    //     $sql = "SELECT ($select) FROM $this->table WHERE $field = :$field"; 
-    //     $stmt = $this->prepare($sql);            
-    //     $stmt->bindValue(":$field", $value);        
-    //     $stmt->execute();
-    //     return $stmt->fetchAll();
-    // }
-
-    // final public function selectAllSelect($select){        
-    //     $sql = "SELECT ($select) FROM $this->table"; 
-    //     $stmt = $this->query($sql);        
-    //     return $stmt->fetchAll();
-    // }
-   
-    // final public function selectId($value){
-    //     $sql = "SELECT * FROM $this->table WHERE $this->primaryKey = :$this->primaryKey";
-    //     $stmt = $this->prepare($sql);       
-    //     $stmt->bindValue(":$this->primaryKey", $value);
-    //     $stmt->execute();
-    //     $count = $stmt->rowCount();
-    //     if($count == 1){
-    //         return $stmt->fetch();
-    //     }else{
-    //         return false;
-    //     }    
-    // }
+    final public function selectBetween($field, $value1, $value2){        
+        $sql = "SELECT * FROM $this->table WHERE $field BETWEEN :min AND :max"; 
+        $stmt = $this->prepare($sql);            
+        $stmt->bindValue(':min', $value1);
+        $stmt->bindValue(':max', $value2);        
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 
     final public function selectValueId($select, $key, $value){             
         $sql = "SELECT $select FROM $this->table WHERE $key = :$this->primaryKey";
@@ -91,22 +73,6 @@ abstract class CRUD extends \PDO {
         return $this->lastInsertId();
     }
     
-   
-    // public function delete($key1, $value1, $key2, $value2){
-    //     // DELETE FROM client WHERE livre_id = :id AND pret_id = :id;
-    //     $sql = "DELETE FROM $this->table WHERE $key1 = :$key1 AND $key2 = :$key2";
-    //     $stmt = $this->prepare($sql);
-    //     $stmt->bindValue(":$key1", $value1);
-    //     $stmt->bindValue(":$key2", $value2);
-    //     $stmt->execute();
-    //     if($stmt){
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-        
-    // }
-
     public function deleteId($value, $field){       
         $sql = "DELETE FROM $this->table WHERE $field = :$field";
         $stmt = $this->prepare($sql);
@@ -132,22 +98,4 @@ abstract class CRUD extends \PDO {
             return false;
         }
     }
-
-    // public function update($value, $fieldName, $primaryKey){       
-
-    //     $sql = "UPDATE $this->table SET $fieldName = :$fieldName WHERE 
-    //      id = $primaryKey";
-
-    //     $data[$this->primaryKey]=$id;
-
-    //     $stmt = $this->prepare($sql);
-    //     $stmt->bindValue(":$fieldName", $value);
-       
-    //     $stmt->execute();
-    //     if($stmt){
-    //         return true;
-    //     }else{
-    //         return false;
-    //     }
-    // }
 }

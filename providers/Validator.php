@@ -85,13 +85,6 @@ class Validator {
         return $this;
     }
 
-    // public function exist() {
-    //     $this->errors[$this->key]="Veillez remplir les champs à nouveau.";  
-    //     return $this;
-    // }
-
-    //regles fin
-
     public function isSuccess(){
         if(empty($this->errors)) return true;
     }

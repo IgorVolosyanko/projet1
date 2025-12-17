@@ -42,7 +42,7 @@
         </ul>
 
         <ul>
-          <li><a href="#">Favoris</a></li>
+          <li><a href="{{base}}/favori">Favoris</a></li>
           <li class="menu-deroulant">
             <a href="#">Français</a>
             <ul class="sous-menu">

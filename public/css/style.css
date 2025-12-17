@@ -9,6 +9,10 @@
 @import url("./categories.css");
 @import url("./bouton.css");
 @import url("./btn.css");
+@import url("./grille.css");
+@import url("./timbre.css");
+@import url("./temps.css");
+@import url("./description.css");
 @import url("./footer.css");
 
 .form-control {
@@ -58,24 +62,6 @@
   margin-bottom: var(--espace-sm);
 }
 
-.timbre {
-  margin: 5px 5px 0 5px;
-  border: 1px solid var(--couleur-gris);
-  border-radius: var(--radius-s);
-  background-color: var(--couleur-primaire);
-  display: flex;
-  justify-items: center;
-  align-content: center;
-}
-
-.timbre > img {
-  max-width: 240px;
-  height: 315px;
-  max-height: 100%;
-  border-radius: var(--radius-s);
-  object-fit: cover;
-}
-
 .titre {
   margin-left: var(--espace-xl);
   margin-bottom: var(--espace-md);
@@ -113,7 +99,7 @@ legend {
   margin-top: var(--espace-md);
 }
 
-.prix-annee > input {
+.prix-annee > * > input {
   padding: 5px;
   border: none;
   border: 1px solid #21486d;
@@ -124,7 +110,14 @@ legend {
   margin: var(--espace-ssm);
 }
 
+[id="zoom"]:checked + .timbre-grand img {
+  max-width: none;
+  width: 700px;
+  cursor: zoom-out;
+}
+
 .mode-de-pay > img,
+label,
 input {
   vertical-align: middle;
 }
@@ -134,8 +127,38 @@ input {
   height: auto;
 }
 
-.mode-de-pay {
-  margin-bottom: var(--espace-xxl);
+.place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.paiement {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.paiement > img {
+  width: 30px;
+  height: auto;
+}
+
+@media (max-width: 1200px) {
+  .paiement img {
+    margin-bottom: 20px;
+  }
+}
+
+.livraison {
+  display: flex;
+  flex-direction: row;
+  gap: var(--espace-sm);
+  margin: 25px var(--espace-sm);
+  padding: 25px 0;
+  border-top: 1px solid var(--couleur-contour);
+  border-bottom: 1px solid var(--couleur-contour);
 }
 
 .contacts {
@@ -153,6 +176,12 @@ input {
   max-width: 25px;
   height: auto;
   padding: 5px 5px 0 5px;
+}
+
+@media (max-width: 350px) {
+  .contacts {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 350px) {
@@ -212,11 +241,27 @@ input {
   border-radius: 10px;
 }
 
-/* .btn-enchere {
-  margin: 40px;
-} */
+.offre {
+  text-decoration: none;
+}
 
-/* .btn-fichier {
-  padding: 5px;
-  font-size: var(--police-taille-mm);
-} */
+.selecteur {
+  margin-bottom: 100px;
+}
+
+.filtre-prix {
+  text-decoration: none;
+  display: block;
+  max-width: 5ch;
+  margin-top: 15px;
+}
+
+.favori {
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.btn-prix {
+  display: block;
+  margin-top: 15px;
+}

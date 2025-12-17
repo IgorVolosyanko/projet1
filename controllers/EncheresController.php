@@ -9,6 +9,7 @@ use App\Models\Image;
 
 class EncheresController{
     public function create(){
+        if(!isset($_SESSION['user_id'])) return View::redirect('login');
         $image = new Image;
         $timbre = new Timbre;
         $timbreIds = $timbre->selectAll($_SESSION['user_id'], 'utilisateur_id', 'id');

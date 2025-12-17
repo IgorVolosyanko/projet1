@@ -1,0 +1,39 @@
+.description {
+  border: 1px solid var(--couleur-contour);
+}
+
+.description > small {
+  display: block;
+  font-size: 0.6rem;
+}
+
+.description > h2 {
+  margin-left: var(--espace-sm);
+}
+
+.description > p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.description > * > label {
+  display: block;
+  text-align: center;
+}
+
+.description > * > input {
+  background-color: var(--couleur-blanc);
+  font-size: 1.2rem;
+  max-width: 200px;
+  padding: 5px;
+  border: 1px solid var(--couleur-contour);
+  border-radius: 5px;
+}
+
+.description > span {
+  display: block;
+  padding: 20px 10px;
+  background-color: yellow;
+  margin: var(--espace-md) 0;
+  text-align: center;
+}

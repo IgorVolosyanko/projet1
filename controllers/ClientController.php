@@ -11,13 +11,15 @@ use App\Models\Image;
 use App\Models\Couleur;
 use App\Models\Timbre;
 use App\Models\Enchere;
+use DateTime;
 
 class ClientController{
     public function index(){
-        $enchere = new Enchere;
         $timbre = new Timbre;
         $image = new Image;
         $pays = new Pays;
+        $enchere = new Enchere;
+        
         $timbreInfos = $timbre->select();
         $cartes = [];
         foreach($timbreInfos as $timbreInfo){
@@ -27,8 +29,17 @@ class ClientController{
             $cartes["$id"] += ["tirage"=>$timbreInfo['tirage']];
             $cartes["$id"] += ["certifie"=>$timbreInfo['certifie']===49 ? 'certifié' : 'non certifié'];
             $cartes["$id"] += ["pays"=>$pays->selectValueId('nom', 'id', $timbreInfo['pays_id'])];
+            $cartes["$id"] += ["status"=>'en vente'];
         }
-        // print_r($cartes);
+        
+        $now = new DateTime();
+        $enchereIds = $enchere->select();
+        foreach($enchereIds as $enchereId){
+            $date = new DateTime($enchereId['fin']);
+            if($date<$now){
+                $cartes[$enchereId['timbre_id']]["status"] = 'vendu';               
+            }            
+        }
         return View::render("client/index", ['cartes'=>$cartes]); 
     }
 

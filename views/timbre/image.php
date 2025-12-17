@@ -30,7 +30,6 @@
                 <img src="{{asset}}/img/{{image.nom}}" alt="Timbre" />
             </div>
             <div class="bouton"> 
-            <!-- {{image.id}}  -->
                 <form action="{{base}}/delete" method="POST">
                     <input type="hidden" name="id" value="{{image.id}}">        
                     <button type="submit" class="btn btn-petit">Effacer</button>

@@ -90,10 +90,8 @@
             <label for="prix-bas">De</label>
             <input type="number" name="prix-bas" id="prix-bas" />
             <label for="prix-haut">à</label>
-            <input type="number" name="prix-haut" id="prix-haut" />              
+            <input type="number" name="prix-haut" id="prix-haut" />
             <button type="submit" class="btn btn-petit btn-prix">Filtrer</button>
-            </form>
-           
           </div>
           <fieldset class="paiement-options">
             <legend>Mode de paiement</legend>

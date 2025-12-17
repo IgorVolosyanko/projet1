@@ -1,0 +1,28 @@
+.temps {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--couleur-contour);
+}
+
+.temps > div {
+  padding: 10px;
+}
+
+@media (max-width: 460px) {
+  .temps {
+    gap: 0;
+  }
+  .temps > div {
+    padding: 0;
+  }
+}
+
+.temps small {
+  font-size: 0.6rem;
+}
+
+.temps h3 {
+  text-align: center;
+}

@@ -37,7 +37,7 @@ class Enchere extends CRUD{
     public function tempsRestant(){
         $now = new DateTime();
         $diff = $now->diff($this->dateFin);
-        return $diff->days; 
+        return $diff; 
     }
 }
 ?>
